@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Paso a Paso: Fotos y Videos que Venden - Lavinia Flores A.</title>
+    <style>
+        :root {
+            --primary-dark: #1a1e1d;
+            --accent-green: #71b832;
+            --accent-green-hover: #5d9a29;
+            --bg-light: #f7f9f6;
+            --card-bg: #ffffff;
+            --text-dark: #2d312e;
+            --text-muted: #626864;
+            --border-light: #e1e5e0;
+            --step-bg: #fdfefe;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Menú de Navegación Superior Moderno */
+        .navbar {
+            background-color: var(--primary-dark);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-logo {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 13pt;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .navbar-subtext {
+            color: var(--accent-green);
+            font-size: 8pt;
+            letter-spacing: 2px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #a3aba8;
+            text-decoration: none;
+            font-size: 9.5pt;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--accent-green);
+            color: #ffffff;
+        }
+
+        /* Contenedor Principal Centrado */
+        .container {
+            max-width: 900px;
+            margin: 110px auto 50px auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .header p {
+            font-size: 11pt;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta de Introducción Importante */
+        .intro-box {
+            background-color: #f2f8ee;
+            border-left: 5px solid var(--accent-green);
+            padding: 25px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+        }
+
+        .intro-box h3 {
+            color: var(--primary-dark);
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        .intro-box p {
+            font-size: 10pt;
+            color: #3b423e;
+        }
+
+        /* Secciones Principales */
+        .guide-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            scroll-margin-top: 90px;
+        }
+
+        .guide-section h2 {
+            font-size: 16pt;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guide-section h2::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-green);
+            border-radius: 3px;
+        }
+
+        /* Estructura del Flujo Paso a Paso */
+        .step-container {
+            position: relative;
+            margin-top: 25px;
+        }
+
+        .step-block {
+            background-color: var(--step-bg);
+            border: 1px solid #f0f4f1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .step-badge {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            font-size: 8.5pt;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .step-block h3 {
+            font-size: 12pt;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .step-block p {
+            font-size: 10pt;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Listas y Consejos Clave dentro del Paso */
+        .tip-list {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .tip-list li {
+            font-size: 9.5pt;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .tip-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Contenedor de Imágenes Reales */
+        .image-container {
+            width: 100%;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background-color: #f0f3f1;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 520px;
+        }
+
+        .image-container.vertical-img img {
+            max-height: 650px;
+            object-position: center;
+        }
+
+        .image-caption {
+            background-color: #fafbfa;
+            padding: 10px 15px;
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Badges de Plataformas */
+        .badge-platform {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 8pt;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-right: 5px;
+            text-transform: uppercase;
+        }
+        .bg-instagram { background-color: #fdf0f5; color: #d62976; }
+        .bg-youtube { background-color: #ffebee; color: #c62828; }
+
+        .footer {
+            text-align: center;
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            padding: 30px 0;
+            border-top: 1px solid var(--border-light);
+            margin-top: 50px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 20px;
+                flex-direction: column;
+                height: auto;
+                padding-bottom: 15px;
+            }
+            .navbar-brand {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .navbar-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                margin-top: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación Superior -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="navbar-logo">Lavinia Flores A.</span>
+            <span class="navbar-subtext">BIENES RAÍCES • GUÍA DE CAMPO</span>
+        </div>
+        <ul class="navbar-nav">
+            <li><a href="#seccion-inmuebles" class="nav-link active" onclick="makeActive(this)">1. Fotos del Inmueble</a></li>
+            <li><a href="#seccion-marca" class="nav-link" onclick="makeActive(this)">2. Fotos de Lavinia</a></li>
+            <li><a href="#seccion-videos" class="nav-link" onclick="makeActive(this)">3. Videos y Tiempos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor del Manual Paso a Paso -->
+    <div class="container">
+        
+        <div class="header">
+            <h1>Manual Práctico: ¿Cómo crear Fotos y Videos que vendan?</h1>
+            <p>Lavinia, esta guía fue diseñada especialmente para ti. Aquí encontrarás el paso a paso exacto para que prepares, encuadres y grabes tus visitas inmobiliarias usando solo tu celular con un acabado profesional.</p>
+        </div>
+
+        <div class="intro-box">
+            <h3>🔑 Regla de Oro para el Algoritmo (Actualizado 2026):</h3>
+            <p>Hoy las personas buscan <strong>realismo</strong>. No te preocupes si un video no parece una película de Hollywood; el público prefiere ver un recorrido honesto, fluido, bien iluminado y sin distorsiones artificiales. ¡Sigue estos pasos antes de cada publicación!</p>
+        </div>
+
+        <!-- SECCIÓN 1: FOTOS A INMUEBLES -->
+        <div class="guide-section" id="seccion-inmuebles">
+            <h2>Paso a Paso: Fotos Impecables a la Propiedad</h2>
+            <p style="color: var(--text-muted); font-size: 10pt; margin-bottom: 20px;">Sigue este orden estricto cada vez que entres a una habitación de la casa o departamento para asegurar tomas amplias y nítidas.</p>
+
+            <div class="step-container">
+                
+                <div class="step-block">
+                    <span class="step-badge">Paso 1</span>
+                    <h3>El "Filtro de Limpieza" y Despersonalización</h3>
+                    <p>Antes de sacar el celular, tus ojos deben escanear el cuarto. El desorden en las fotos distrae al comprador y hace que los espacios parezcan notablemente más pequeños.</p>
+                    <ul class="tip-list">
+                        <li><strong>En el baño:</strong> Baja absolutamente todas las tapas de los inodoros y esconde champús, cepillos y toallas usadas.</li>
+                        <li><strong>En la cocina y sala:</strong> Esconde los cables de cargadores, retira los tachos de basura visibles y limpia superficies reflectantes.</li>
+                        <li><strong>El toque final:</strong> Deja un objeto neutro decorativo elegante, como un libro de portadas bonitas abierto sobre la mesa o una planta pequeña.</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Interior residencial perfectamente ordenado">
+                        <div class="image-caption">Ejemplo de Interiorismo: Ambientes residenciales limpios, cojines ordenados y superficies despejadas antes de la captura.</div>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <span class="step-badge">Paso 2</span>
+                    <h3>Configura tu Lente en Gran Angular (0.6x)</h3>
+                    <p>Este es tu mejor aliado. Al activar este lente, la cámara abarca un ángulo de visión idéntico al del ojo humano, permitiendo capturar habitaciones enteras en una sola toma.</p>
+                    <ul class="tip-list">
+                        <li>Abre la app de tu cámara y selecciona el número <strong>0.6x</strong> (o desliza los dedos para alejar la imagen).</li>
+                        <li><strong>La postura correcta:</strong> No levantes el teléfono a la altura de tus ojos. Sostenlo firmemente a la <strong>altura del pecho</strong> y perfectamente derecho (perpendicular al piso). Esto evitará que las paredes salgan inclinadas o deformes.</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Perspectiva gran angular correcta en interiores">
+                        <div class="image-caption">Efecto Gran Angular (0.6x): Captura esquinas paralelas manteniendo el celular recto a la altura del pecho para ganar amplitud.</div>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <span class="step-badge">Paso 3</span>
+                    <h3>Domina la Luz y el Enfoque Táctil</h3>
+                    <p>El error más común es apuntar a una ventana y que todo el cuarto se oscurezca de inmediato (efecto contraluz).</p>
+                    <ul class="tip-list">
+                        <li>Enciende siempre todas las luces artificiales de la habitación, incluso si es de día. Aporta calidez y resalta texturas.</li>
+                        <li><strong>Truco de pantalla:</strong> Apunta a la habitación, y en la pantalla de tu celular haz un toque con el dedo justo en la frontera entre la zona oscura y la ventana iluminada. Verás cómo el celular regula la luz (HDR) equilibrando ambos lados de manera óptima.</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="Ambiente de sala con fuerte luz natural de fondo">
+                        <div class="image-caption">Manejo de Contraluz: Ejemplo de un espacio con amplias ventanas de fondo que requiere equilibrar el enfoque en tu pantalla para no oscurecer la sala.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: MARCA PERSONAL -->
+        <div class="guide-section" id="seccion-marca">
+            <h2>Paso a Paso: Fotos de Marca Personal para Lavinia</h2>
+            <p style="color: var(--text-muted); font-size: 10pt; margin-bottom: 20px;">Las propiedades no se venden solas; te compran a ti primero. Tu imagen debe transmitir confianza, liderazgo y accesibilidad.</p>
+
+            <div class="step-container">
+                
+                <div class="step-block">
+                    <span class="step-badge">Paso 1</span>
+                    <h3>Selecciona un Fondo de Acción Inmobiliaria</h3>
+                    <p>Evita las fotos rígidas frente a una pared blanca de oficina. Usa los departamentos o casas más bonitas de tu cartera como tu escenario natural de trabajo.</p>
+                    <ul class="tip-list">
+                        <li>Haz fotos donde se te vea abriendo suavemente unas mamparas hacia la terraza, sonriendo al lado de la barra de la cocina iluminada, o apuntando hacia un detalle arquitectónico con naturalidad.</li>
+                        <li>Pídele a tu asistente o acompañante que use el <strong>Modo Retrato</strong> de tu celular para que tú salgas perfectamente nítida y el fondo adquiera un desenfoque sutil y sofisticado.</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" alt="Agente inmobiliaria profesional con fondo de edificio corporativo">
+                        <div class="image-caption">Fondo de Acción: Imagen de perfil profesional integrada en un entorno urbano y de bienes raíces moderno.</div>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <span class="step-badge">Paso 2</span>
+                    <h3>Lenguaje Corporal y Vestimenta Eficaz</h3>
+                    <p>Los pequeños detalles visuales en tu postura construyen de forma subconsciente la autoridad notarial y comercial.</p>
+                    <ul class="tip-list">
+                        <li><strong>Posturas Abiertas:</strong> Hombros relajados, espalda recta y manos visibles. Evita cruzar los brazos apretadamente porque levanta una barrera visual de cara al cliente.</li>
+                        <li><strong>Colores Inteligentes:</strong> Viste prendas de colores sólidos uniformes (azul marino, beige, blanco satinado, tonos tierra). Evita patrones de líneas o cuadros muy pequeños, ya que causan parpadeos molestos ("efecto muaré") al verse desde pantallas telefónicas.</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80" alt="Mujer profesional de sastre expresando confianza con sus manos">
+                        <div class="image-caption">Expresión de Confianza: Encuadre de sastre formal impecable con un lenguaje corporal que denota seguridad, apertura y dinamismo comercial.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: ESTRATEGIA DE VIDEOS Y PLATAFORMAS -->
+        <div class="guide-section" id="seccion-videos">
+            <h2>Estrategia de Video: Formatos, Tiempos y Canales</h2>
+            <p style="color: var(--text-muted); font-size: 10pt; margin-bottom: 20px;">No todos los videos sirven para lo mismo. Aquí tienes la estructura exacta de tiempos y orientaciones recomendadas.</p>
+
+            <div class="step-container">
+                
+                <div class="step-block">
+                    <span class="badge-platform bg-instagram">Instagram Reels / YouTube Shorts</span>
+                    <span class="step-badge">Formato Vertical (9:16)</span>
+                    <h3 style="margin-top: 10px;">Videos Cortos e Inmersivos (El Gancho Visual)</h3>
+                    <p><strong>Objetivo principal:</strong> Detener el scroll del usuario rápido, generar curiosidad masiva e impulsar visitas orgánicas a tu perfil.</p>
+                    <ul class="tip-list">
+                        <li><strong>Duración Ideal:</strong> De 15 a 45 segundos como máximo.</li>
+                        <li><strong>Estructura Paso a Paso:</strong> Comienza mostrando de golpe el espacio más espectacular del inmueble en los primeros 2 segundos (la terraza con vista premium o el walking closet gigante). Luego, haz tomas rápidas de 2 segundos por habitación con música dinámica y tu voz de fondo explicando por qué es una oportunidad única.</li>
+                    </ul>
+                    <div class="image-container vertical-img">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&h=1000&q=80" alt="Inmueble moderno en formato vertical para Reels">
+                        <div class="image-caption">Captura Vertical (9:16): Proporción idónea para mostrar detalles de impacto rápido y vistas inmersivas que detengan el scroll.</div>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <span class="badge-platform bg-youtube">YouTube / Enlaces web</span>
+                    <span class="step-badge">Formato Horizontal (16:9)</span>
+                    <h3 style="margin-top: 10px;">El Recorrido Guiado Premium (Para Clientes Filtrados)</h3>
+                    <p><strong>Objetivo principal:</strong> Informar y convencer al comprador ideal que ya tiene el presupuesto y busca especificaciones de distribución o términos legales.</p>
+                    <ul class="tip-list">
+                        <li><strong>Duración Ideal:</strong> De 3 a 7 minutos.</li>
+                        <li><strong>Estructura Paso a Paso:</strong> Graba de forma horizontal (echado). Inicia presentándote en la sala, explica paso a paso la distribución caminando de forma pausada por los pasillos. Detente en cada ambiente para detallar acabados, metrajes, datos del entorno y cierra con un llamado a la acción invitándolos a agendar una cita.</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Fachada de casa residencial de lujo en formato horizontal 16:9">
+                        <div class="image-caption">Captura Horizontal (16:9): Formato extendido ideal para recorridos completos de fachadas, interiores amplios y explicaciones guiadas.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PIE DE PÁGINA -->
+        <div class="footer">
+            Guía de Aprendizaje Práctico e Interactiva • Plan de Contenido Multimedia 2026 • Exclusivo para Lavinia Flores A.
+        </div>
+
+    </div>
+
+    <!-- Script para cambiar el enlace activo del menú superior al hacer clic -->
+    <script>
+        function makeActive(element) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>

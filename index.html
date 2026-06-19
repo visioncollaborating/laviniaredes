@@ -241,6 +241,21 @@
             color: var(--gris-texto);
         }
 
+        /* Estilo para convertir la tarjeta en un botón de enlace limpio */
+        a.card-minimal-link {
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            border-left: 4px solid var(--verde-manzana);
+            transition: all 0.3s ease;
+        }
+
+        a.card-minimal-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+            background-color: #EBF5E8;
+        }
+
         /* Fotos base */
         .image-container {
             width: 100%;
@@ -667,10 +682,13 @@
                         <h3>Videos Cortos y Juntos</h3>
                         <p>Es mejor hacer varios videos chiquitos de cada habitación (sala, cocina, baños) y luego los juntamos en el editor. El video final ya editado no debe durar más de 1 minuto.</p>
                     </div>
-                    <div class="card-minimal">
+                    
+                    <!-- BLOQUE LINKABLE PARA LOS TIPS DE CÁMARA -->
+                    <a href="tips.html" class="card-minimal card-minimal-link">
                         <h3>Tips para la Cámara</h3>
                         <p>Usa siempre el lente <strong>Gran Angular (0.6)</strong> de tu celular para que los cuartos se vean más amplios. Ordena un poquito el espacio antes de grabar y ten mucho cuidado con la luz de las ventanas para que no se vea oscuro.</p>
-                    </div>
+                    </a>
+                    
                     <div class="card-minimal">
                         <h3>Formatos Listos</h3>
                         <p>Graba videos cuadrados o echados para el muro de Facebook e Instagram, y graba videos completamente verticales (parados) para tus Historias y Reels orgánicos.</p>
@@ -845,7 +863,7 @@
                     </div>
                     <div class="card-minimal accent">
                         <h3>Tu Imagen Profesional Uniforme</h3>
-                        <p>Aprovecha cuando estés bien vestida para tus citas de corretaje y graba pequeños videos hablando de tus servicios o explicando un detalle del inmueble. Mostrar tu rostro con una imagen profesional eleva la confianza de los compradores de inmediato.</p>
+                        <p>Aprovecha cuando estés bien vestida para tus citas de corretaje y graba pequeños videos hablando de tus servicios o explaining un detalle del inmueble. Mostrar tu rostro con una imagen profesional eleva la confianza de los compradores de inmediato.</p>
                     </div>
                     <div class="card-minimal accent">
                         <h3>Velocidad de Respuesta en WhatsApp</h3>
